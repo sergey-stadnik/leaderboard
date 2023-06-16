@@ -11,7 +11,7 @@ import SwiftUI
 struct leaderboardApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LeaderboardView(viewModel: LeaderboardViewModel())
         }
     }
 }

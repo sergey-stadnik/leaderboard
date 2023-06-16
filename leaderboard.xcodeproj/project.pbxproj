@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		457FDDA12A3C70A700D29B30 /* leaderboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FDDA02A3C70A700D29B30 /* leaderboardApp.swift */; };
-		457FDDA32A3C70A700D29B30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FDDA22A3C70A700D29B30 /* ContentView.swift */; };
 		457FDDA52A3C70A800D29B30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457FDDA42A3C70A800D29B30 /* Assets.xcassets */; };
 		457FDDA82A3C70A800D29B30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457FDDA72A3C70A800D29B30 /* Preview Assets.xcassets */; };
+		457FDDD22A3CAD2B00D29B30 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FDDD12A3CAD2B00D29B30 /* LeaderboardView.swift */; };
+		457FDDD52A3CAD6100D29B30 /* LeaderboardViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FDDD42A3CAD6100D29B30 /* LeaderboardViewModelProtocol.swift */; };
+		457FDDD72A3CAD8700D29B30 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FDDD62A3CAD8700D29B30 /* LeaderboardViewModel.swift */; };
+		457FDDD92A3CAE5F00D29B30 /* LeaderDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FDDD82A3CAE5F00D29B30 /* LeaderDisplayModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		457FDD9D2A3C70A700D29B30 /* leaderboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leaderboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		457FDDA02A3C70A700D29B30 /* leaderboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leaderboardApp.swift; sourceTree = "<group>"; };
-		457FDDA22A3C70A700D29B30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		457FDDA42A3C70A800D29B30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		457FDDA72A3C70A800D29B30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		457FDDD12A3CAD2B00D29B30 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		457FDDD42A3CAD6100D29B30 /* LeaderboardViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModelProtocol.swift; sourceTree = "<group>"; };
+		457FDDD62A3CAD8700D29B30 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
+		457FDDD82A3CAE5F00D29B30 /* LeaderDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderDisplayModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				457FDDA02A3C70A700D29B30 /* leaderboardApp.swift */,
-				457FDDA22A3C70A700D29B30 /* ContentView.swift */,
+				457FDDD42A3CAD6100D29B30 /* LeaderboardViewModelProtocol.swift */,
+				457FDDD62A3CAD8700D29B30 /* LeaderboardViewModel.swift */,
+				457FDDD12A3CAD2B00D29B30 /* LeaderboardView.swift */,
+				457FDDD82A3CAE5F00D29B30 /* LeaderDisplayModel.swift */,
 				457FDDA42A3C70A800D29B30 /* Assets.xcassets */,
 				457FDDA62A3C70A800D29B30 /* Preview Content */,
 			);
@@ -137,7 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				457FDDA32A3C70A700D29B30 /* ContentView.swift in Sources */,
+				457FDDD52A3CAD6100D29B30 /* LeaderboardViewModelProtocol.swift in Sources */,
+				457FDDD92A3CAE5F00D29B30 /* LeaderDisplayModel.swift in Sources */,
+				457FDDD72A3CAD8700D29B30 /* LeaderboardViewModel.swift in Sources */,
+				457FDDD22A3CAD2B00D29B30 /* LeaderboardView.swift in Sources */,
 				457FDDA12A3C70A700D29B30 /* leaderboardApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,7 +207,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
