@@ -14,7 +14,7 @@ struct LeaderboardView<ViewModelType: LeaderboardViewModelProtocol>: View {
     var body: some View {
         NavigationView {
             Form {
-                VStack(alignment: .leading) {
+                VStack() {
                     Picker("", selection: $viewModel.leaderboardType) {
                         Text(LeaderboardType.region.description).tag(LeaderboardType.region)
                         Text(LeaderboardType.national.description).tag(LeaderboardType.national)
@@ -22,21 +22,17 @@ struct LeaderboardView<ViewModelType: LeaderboardViewModelProtocol>: View {
                     }
                     .pickerStyle(.segmented)
 
-                    List(viewModel.leaders) { item in
-                        HStack(alignment: .center) {
-                            Image(systemName: item.imageName)
-                                .padding()
-
-                            VStack(alignment: .leading) {
-                                Text(item.firstName)
-                                Text(item.lastName)
-                            }
-
-                            Spacer()
-
-                            Text("\(item.rating)")
-                        }
+                    HStack(alignment: .bottom) {
+                        ratingView("Ellipse-2")
+                            .padding()
+                        ratingView("Rectangle", firstPosition: true)
+                            .padding()
+                        ratingView("Ellipse-4")
+                            .padding()
                     }
+                    .padding()
+
+                    leaderboardList()
                 }
                 .onAppear {
                     viewModel.leaderboardType = .region
@@ -44,6 +40,43 @@ struct LeaderboardView<ViewModelType: LeaderboardViewModelProtocol>: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Leaderboard")
+        }
+    }
+
+    private func ratingView(_ imageName: String, firstPosition: Bool = false) -> some View {
+        VStack {
+            if firstPosition {
+                Image("king")
+                    .padding(.bottom, 20)
+            }
+            Image(imageName)
+                .frame(width: 50, height: 50)
+                .padding(.bottom, 20)
+
+            if let randomLeader = viewModel.leaders.randomElement() {
+                Text(randomLeader.firstName)
+                Text(randomLeader.lastName)
+                Text("\(randomLeader.rating)")
+                    .padding(.top, 20)
+            }
+        }
+    }
+
+    private func leaderboardList() -> some View {
+        List(viewModel.leaders) { item in
+            HStack(alignment: .center) {
+                Image(systemName: item.imageName)
+                    .padding()
+
+                VStack(alignment: .leading) {
+                    Text(item.firstName)
+                    Text(item.lastName)
+                }
+
+                Spacer()
+
+                Text("\(item.rating)")
+            }
         }
     }
 }

@@ -56,5 +56,6 @@ final class LeaderboardViewModel: LeaderboardViewModelProtocol {
             }
         }
     }
+    
     @Published var leaders: [LeaderDisplayModel] = []
 }
